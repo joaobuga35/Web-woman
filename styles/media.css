@@ -24,6 +24,9 @@
         margin-bottom: 3.75rem;
     }
 
+    .title-vacancies {
+        margin-left: 2rem;
+    }
     .card-vacancies{
         width: 51.125rem;
         height: 20.188rem;
@@ -51,6 +54,12 @@
         padding-top: 2rem;
         padding-left: 2rem;
         margin-top: 7.25rem;
+    }
+
+    .card-selected {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
     }
 
     .btn-trash {

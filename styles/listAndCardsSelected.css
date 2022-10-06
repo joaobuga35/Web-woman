@@ -26,6 +26,11 @@
     width: 100%;
     height: 10rem;
     margin-bottom: 1rem;
+    border-radius: var(--radius-1);
+}
+
+.card-selected:hover{
+    background-color: var(--color-grey-5);
 }
 
 .div-btn-trash {
