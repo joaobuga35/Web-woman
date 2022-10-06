@@ -47,12 +47,3 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
-@media(max-width: 991px){
-  :root {
-    --title-1: calc(3rem / 1.2);
-    --title-2: calc(2.5rem / 1.2);
-    --title-3: calc(2rem / 1.2);
-    --text-1:  calc(1.125rem / 1.2);
-  }
-}

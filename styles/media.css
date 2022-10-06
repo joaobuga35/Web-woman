@@ -1,0 +1,59 @@
+@media(min-width: 991px){
+    :root {
+      --title-1: calc(3rem / 1.2);
+      --title-2: calc(2.5rem / 1.2);
+      --title-3: calc(2rem / 1.2);
+      --text-1:  calc(1.125rem / 1.2);
+    }
+
+    .menu-header {
+        max-width: 100vw;
+        height: 789px;
+        background-image: url(../assets/img/header-bg.png);
+    }
+
+    .div-header-description {
+        padding: 10rem 17rem;
+    }
+
+    .div-header-description h2 {
+        font-size: var(--title-1);
+    }
+
+    .second-description-header{
+        margin-bottom: 3.75rem;
+    }
+
+    .card-vacancies{
+        width: 51.125rem;
+        height: 20.188rem;
+    }
+
+    .div-btn-apply {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .btn-apply {
+        width: 9.375rem;
+        height: 2.375rem;
+    }
+
+    main {
+        display: flex;
+    }
+
+    .div-aside{
+        width: 26rem;
+        max-height: 31.25rem;
+        overflow-y: scroll;
+        padding-top: 2rem;
+        padding-left: 2rem;
+        margin-top: 7.25rem;
+    }
+
+    .btn-trash {
+        width: 2.5rem;
+    }
+}
