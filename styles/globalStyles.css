@@ -31,6 +31,8 @@ img {
   --text-1:  1.125rem;
   --text-2:  1rem;
   --text-3:  0.875rem;
+
+  --radius-1: 0.5rem;
 }
 
 body {
