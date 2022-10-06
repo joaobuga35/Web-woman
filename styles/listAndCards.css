@@ -1,0 +1,65 @@
+.section-vacancies {
+    margin-top: 2.688rem;
+}
+
+.title-vacancies {
+    margin-bottom: 2.75rem;
+    color: var(--color-grey-1);
+    font-size: var(--titile-4);
+}
+
+ul {
+    list-style: none;
+}
+
+.card-vacancies {
+    padding: 2.375rem;
+    margin-bottom: 2rem;
+    background-color: var(--color-grey-6);
+    border-radius: var(--radius-1);
+}
+
+.card-vacancies h3 {
+    margin-bottom: 1.125rem;
+    font-size: var(--titile-4);
+    color: var(--color-grey-1);
+}
+
+.div-local-company {
+    display: flex;
+    gap: 2rem;
+}
+
+.div-local-company span {
+    font-weight: 400;
+    font-size: var(--text-3);
+    color: var(--color-grey-2);
+    margin-bottom: 1.75rem;
+}
+
+.description-vacancies {
+    color: var(--color-grey-2);
+    font-size: var(--text-3);
+    line-height: 2rem;
+    margin-bottom: 1.75rem;
+}
+
+.div-btn-apply {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2.375rem;
+}
+
+.model-work {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-grey-2);
+    font-size: var(--text-3);
+    background-color: var(--color-grey-3);
+    width: 6.938rem;
+    height: 1.875rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-1);
+}
