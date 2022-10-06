@@ -1,0 +1,44 @@
+.hide {
+    display: none;
+}
+
+.div-aside {
+    background-color: var(--color-grey-6);
+    border-radius: var(--radius-1);
+    width: 18rem;
+    height: 31.25rem;
+    margin-bottom: 2rem;
+    padding: 2.375rem 0.875rem;
+}
+
+.title-vacancies {
+    font-size: var(--titile-4);
+    color: var(--color-grey-1);
+    margin-bottom: 3rem;
+}
+
+.div-alert {
+    color: var(--color-grey-2);
+    font-size: var(--text-3);
+}
+
+.card-selected {
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 1rem;
+}
+
+.div-btn-trash {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.div-btn-trash h3 {
+    color: var(--color-grey-1);
+    font-size: 1rem;
+}
+
+.div-span-selected {
+    display: flex;
+}

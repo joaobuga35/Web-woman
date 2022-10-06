@@ -10,6 +10,11 @@
     cursor: pointer;
 }
 
+.btn-vacancies:hover {
+    background-color: var(--color-brand-2);
+    border: 2px solid var(--color-brand-2);
+}
+
 .btn-apply {
     display: flex;
     justify-content: center;
@@ -23,4 +28,25 @@
     width: 100%;
     height: 2.375rem;
     cursor: pointer;
+}
+
+.btn-apply:hover {
+    background-color: var(--color-brand-2);
+    border: 2px solid var(--color-brand-2);
+}
+
+.btn-trash {
+    display: flex;
+    align-items: center;
+    width: 4.5rem;
+    height: 2.375rem;
+    background-color: var(--color-grey-5);
+    border: 2px solid var(--color-grey-5);
+    border-radius: var(--radius-1);
+    cursor: pointer;
+}
+
+.btn-trash:hover {
+    background-color: var(--color-grey-3);
+    border: 2px solid var(--color-grey-2);
 }

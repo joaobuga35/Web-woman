@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/buttons.css">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/listAndCards.css">
+    <link rel="stylesheet" href="./styles/listAndCardsSelected.css">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
     <title>Webwomen</title>
@@ -81,26 +82,52 @@
         </ul>
       </section>
 
-      <section class="container">
-        <h3>Vagas selecionadas</h3>
-        <ul>
-          <div>
-            <p>Você ainda não aplicou para nenhuma vaga</p>
-          </div>
-
-          <li>
-            <div>
-              <h3>Pessoa desenvolvedora front-end - React JS</h3>
-              <button><span><img src="./assets/img/buttonTrash.svg" alt="trash"></span></button>
+      <aside class="container">
+        <div class="div-aside">
+          <h3 class="title-vacancies">Vagas selecionadas</h3>
+          <ul>
+            <div class="hide">
+              <p class="div-alert">Você ainda não aplicou para nenhuma vaga</p>
             </div>
+          
+            <li class="card-selected">
+              <div class="div-btn-trash">
+                <h3>Pessoa desenvolvedora front-end - React JS</h3>
+                <button class="btn-trash"><img src="./assets/img/buttonTrash.svg" alt="trash"></button>
+              </div>
+          
+              <div class="div-local-company">
+                <span>Kenzie Academy</span>
+                <span>Curitiba</span>
+              </div>
+            </li>
 
-            <div>
-              <span>Kenzie Academy</span>
-              <span>Curitiba</span>
-            </div>
-          </li>
-        </ul>
-      </section>
+            <li class="card-selected">
+              <div class="div-btn-trash">
+                <h3>Pessoa desenvolvedora front-end - React JS</h3>
+                <button class="btn-trash"><img src="./assets/img/buttonTrash.svg" alt="trash"></button>
+              </div>
+          
+              <div class="div-local-company">
+                <span>Kenzie Academy</span>
+                <span>Curitiba</span>
+              </div>
+            </li>
+
+            <li class="card-selected">
+              <div class="div-btn-trash">
+                <h3>Pessoa desenvolvedora front-end - React JS</h3>
+                <button class="btn-trash"><img src="./assets/img/buttonTrash.svg" alt="trash"></button>
+              </div>
+          
+              <div class="div-local-company">
+                <span>Kenzie Academy</span>
+                <span>Curitiba</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
 
     </main>
     <script src="./js/jobsData.js"></script>
