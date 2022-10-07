@@ -39,7 +39,7 @@ function renderVacancies(list){
         btnRemove.id = element.id
         btnRemove.innerText = 'Remover candidatura'
 
-        let takeLocal = JSON.parse(localStorage.getItem('@vagas:vagasSelecionadas'))
+        let takeLocal = JSON.parse(localStorage.getItem('@vagas:vagasSelecionadas')) || []
 
         const locationList = takeLocal.findIndex((object) => {
             return object.id == btnApply.id || object.id == btnRemove.id
@@ -88,7 +88,6 @@ function renderVacancies(list){
     return ulVacancies
 }
 
-renderVacancies(jobsData)
 
 function renderVacanciesSelect(list){
     const ulSelected = document.getElementById('list-selected')
@@ -170,3 +169,4 @@ function localJson (){
 }
 
 localJson()
+renderVacancies(jobsData)
