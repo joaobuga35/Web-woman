@@ -3,6 +3,7 @@
 }
 
 .title-vacancies {
+    margin-left: 1rem;
     margin-bottom: 2.75rem;
     color: var(--color-grey-1);
     font-size: var(--titile-4);
