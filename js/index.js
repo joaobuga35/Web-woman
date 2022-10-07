@@ -1,3 +1,4 @@
+let newArrayStorage = []
 
 function renderVacancies(list){
     const ulVacancies = document.getElementById('list-vacancies')
@@ -14,6 +15,7 @@ function renderVacancies(list){
         const spanModelWorkSecond = document.createElement('span')
         const divBtnApply = document.createElement('div')
         const btnApply = document.createElement('button')
+        const btnRemove = document.createElement('button')
 
         li.classList = 'card-vacancies'
 
@@ -31,12 +33,54 @@ function renderVacancies(list){
         spanModelWorkSecond.classList = 'model-work'
         spanModelWork.innerText = element.modalities[0]
         btnApply.classList = 'btn-apply'
-        btnApply.id = 'apply-vacancies'
+        btnApply.id = element.id
         btnApply.innerText = 'Candidatar'
+        btnRemove.classList = 'btn-remove'
+        btnRemove.id = element.id
+        btnRemove.innerText = 'Remover candidatura'
+
+        let takeLocal = JSON.parse(localStorage.getItem('@vagas:vagasSelecionadas'))
+
+        const locationList = takeLocal.findIndex((object) => {
+            return object.id == btnApply.id || object.id == btnRemove.id
+        })
+
+        if (locationList != -1) {
+            btnApply.classList.toggle('btn-remove')
+            btnApply.classList.toggle('btn-apply')
+            btnRemove.classList.toggle('btn-apply')
+            btnRemove.classList.toggle('btn-remove')
+        }
+
+       btnApply.addEventListener('click', () => {
+            btnApply.classList.toggle('btn-remove')
+            btnApply.classList.toggle('btn-apply')
+            btnRemove.classList.toggle('btn-apply')
+            btnRemove.classList.toggle('btn-remove')
+
+            const newArrSelected = list.filter((element) => {
+                return element.id === parseInt(btnApply.id)
+            })
+            newArrayStorage.push(newArrSelected[0])
+            renderVacanciesSelect(newArrayStorage)
+
+            localStorage.setItem('@vagas:vagasSelecionadas',JSON.stringify(newArrayStorage))
+       })
+
+       btnRemove.addEventListener('click',() => {
+        btnApply.classList.toggle('btn-remove')
+        btnApply.classList.toggle('btn-apply')
+        btnRemove.classList.toggle('btn-apply')
+        btnRemove.classList.toggle('btn-remove')
+
+            findId(btnRemove.id)
+            renderVacanciesSelect(newArrayStorage)
+            localStorage.setItem('@vagas:vagasSelecionadas',JSON.stringify(newArrayStorage))
+       })
 
         divLocal.append(span,spanLocal)
         divBtnApply.append(btnApply)
-        divBtn.append(spanModelWork,btnApply)
+        divBtn.append(spanModelWork,btnApply,btnRemove)
         li.append(h3,divLocal,descriptionP,divBtn)
 
         ulVacancies.append(li)
@@ -48,6 +92,7 @@ renderVacancies(jobsData)
 
 function renderVacanciesSelect(list){
     const ulSelected = document.getElementById('list-selected')
+    ulSelected.innerHTML = ''
     list.forEach(element => {
         const liSelect = document.createElement('li')
         const divTrash = document.createElement('div')
@@ -58,10 +103,10 @@ function renderVacanciesSelect(list){
         const spanEnterprise = document.createElement('span')
         const spanLocal = document.createElement('span')
 
-        liSelect.classList = 'card-selected'
+        liSelect.classList = 'card-selected animation'
         divTrash.classList = 'div-btn-trash'
         h3Select.innerText = element.title
-        btnTrash.id = 'btn-trash'
+        btnTrash.id = element.id
         btnTrash.classList = 'btn-trash'
         imgTrash.src = './assets/img/buttonTrash.svg'
 
@@ -72,41 +117,56 @@ function renderVacanciesSelect(list){
         btnTrash.append(imgTrash)
         divTrash.append(h3Select,btnTrash)
 
+        btnTrash.addEventListener('click',() => {
+           removeItem(element)
+           renderVacanciesSelect(newArrayStorage)
+           let buttonsVacancies = document.querySelectorAll('.btn-apply')
+           let buttonsRemove    = document.querySelectorAll('.btn-remove')
+           buttonsVacancies.forEach((buttons)=> {
+                if (buttons.id == btnTrash.id) {
+                    buttons.classList.toggle('btn-apply')
+                    buttons.classList.toggle('btn-remove')
+                }
+           })
+
+           buttonsRemove.forEach((buttons) => {
+                if (buttons.id == btnTrash.id) {
+                    buttons.classList.toggle('btn-apply')
+                    buttons.classList.toggle('btn-remove')
+                }
+           })
+           localStorage.setItem('@vagas:vagasSelecionadas',JSON.stringify(newArrayStorage))
+        })
+
         divLocalCompany.append(spanEnterprise,spanLocal)
         
         liSelect.append(divTrash,divLocalCompany)
         ulSelected.append(liSelect)
     })
+    return ulSelected
 }
 
-{/* <li class="card-selected">
-    <div class="div-btn-trash">
-        <h3>Pessoa desenvolvedora front-end - React JS</h3>
-        <button class="btn-trash"><img src="./assets/img/buttonTrash.svg" alt="trash"></button>
-    </div>
+function removeItem(element){
+    let index = newArrayStorage.indexOf(element)
+    newArrayStorage.splice(index,1)
+}
 
-    <div class="div-local-company">
-        <span>Kenzie Academy</span>
-        <span>Curitiba</span>
-    </div>
-</li> */}
-
-
-
+function findId (id) {
+    let find = newArrayStorage.findIndex((element) => {
+        return element.id == id
+    })
+    console.log(find)
+    newArrayStorage.splice(find,1)
+}
 
 
+let local = JSON.parse(localStorage.getItem('@vagas:vagasSelecionadas'))
 
+function localJson (){
+    if (local) {
+        newArrayStorage = [...local,]
+        renderVacanciesSelect(newArrayStorage)
+    }
+}
 
-
-{/* <li class="card-vacancies">
-    <h3>Pessoa desenvolvedora front-end - React JS</h3>
-    <div class="div-local-company">
-        <span>Kenzie Academy</span>
-        <span>Curitiba</span>
-    </div>
-
-    <p class="description-vacancies">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae odio, tempora magnam aspernatur blanditiis quibusdam commodi perferendis pariatur, dicta ipsa veniam temporibus ipsam, incidunt quas optio voluptates nostrum! At, incidunt?</p>
-    <div class="div-btn-apply">
-        <span class="model-work">Home Office</span>
-        <button class="btn-apply">Candidatar</button>
-    </div> */}
+localJson()

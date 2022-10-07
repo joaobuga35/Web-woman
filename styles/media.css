@@ -36,11 +36,16 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        
     }
 
     .btn-apply {
-        width: 9.375rem;
+        width: 12.375rem;
         height: 2.375rem;
+    }
+
+    .btn-remove {
+        width: 11.375rem;
     }
 
     main {
@@ -54,6 +59,8 @@
         padding-top: 2rem;
         padding-left: 2rem;
         margin-top: 7.25rem;
+        position: sticky;
+        top: 70px;
     }
 
     .card-selected {
