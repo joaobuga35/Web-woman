@@ -21,20 +21,20 @@
     />
 </head>
 <body>
-    <header class="menu-header bg-config-default">
-      <div class="div-header-description">
-        <h1>Webwomen</h1>
-        <h2>Lugar de mulher é onde ela quiser!</h2>
-        <p class="first-description-header">Está procurando oportunidades de estágio, emprego ou bolsas de estudo?</p>
-        <p class="first-description-header"> Ou até mesmo oportunidades para atender eventos de tecnologia no Brasil e ao redor do mundo?</p>
-        
-        <p class="second-description-header"><strong>Confere aqui embaixo o que temos pra você!</strong></p>
-        <div>
-          <button class="btn-vacancies">Ir para seção das vagas</button>
-        </div>
+  <header class="menu-header bg-config-default">
+    <div class="div-header-description">
+      <h1>Webwomen</h1>
+      <h2>Lugar de mulher é onde ela quiser!</h2>
+      <p class="first-description-header">Está procurando oportunidades de estágio, emprego ou bolsas de estudo?</p>
+      <p class="first-description-header"> Ou até mesmo oportunidades para atender eventos de tecnologia no Brasil e ao redor do mundo?</p>
+      
+      <p class="second-description-header"><strong>Confere aqui embaixo o que temos pra você!</strong></p>
+      <div>
+        <button class="btn-vacancies">Ir para seção das vagas</button>
       </div>
-    </header>
-    <main>
+    </div>
+  </header>
+    <main class="container-content">
       <section class="section-vacancies container">
         <h3 class="title-vacancies">Vagas</h3>
         <ul id="list-vacancies">
@@ -44,14 +44,13 @@
       <aside class="container">
         <div class="div-aside">
           <h3 class="title-vacancies">Vagas selecionadas</h3>
+          <div id="div-message" class="hide">
+            <p class="div-alert">Você ainda não aplicou para nenhuma vaga</p>
+          </div>
           <ul id="list-selected">
-            <div class="hide">
-              <p class="div-alert">Você ainda não aplicou para nenhuma vaga</p>
-            </div>
           </ul>
         </div>
       </aside>
-
     </main>
     <script src="./js/jobsData.js"></script>
     <script src="./js/index.js"></script>

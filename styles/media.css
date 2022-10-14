@@ -6,6 +6,11 @@
       --text-1:  calc(1.125rem / 1.2);
     }
 
+    .container-content {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
     .menu-header {
         max-width: 100vw;
         height: 789px;

@@ -52,6 +52,7 @@ function renderVacancies(list){
             btnRemove.classList.toggle('btn-remove')
         }
 
+
        btnApply.addEventListener('click', () => {
             btnApply.classList.toggle('btn-remove')
             btnApply.classList.toggle('btn-apply')
@@ -63,8 +64,8 @@ function renderVacancies(list){
             })
             newArrayStorage.push(newArrSelected[0])
             renderVacanciesSelect(newArrayStorage)
-
             localStorage.setItem('@vagas:vagasSelecionadas',JSON.stringify(newArrayStorage))
+            messageVacancies()
        })
 
        btnRemove.addEventListener('click',() => {
@@ -76,6 +77,7 @@ function renderVacancies(list){
             findId(btnRemove.id)
             renderVacanciesSelect(newArrayStorage)
             localStorage.setItem('@vagas:vagasSelecionadas',JSON.stringify(newArrayStorage))
+            messageVacancies()
        })
 
         divLocal.append(span,spanLocal)
@@ -134,7 +136,8 @@ function renderVacanciesSelect(list){
                     buttons.classList.toggle('btn-remove')
                 }
            })
-           localStorage.setItem('@vagas:vagasSelecionadas',JSON.stringify(newArrayStorage))
+           localStorage.setItem('@vagas:vagasSelecionadas',JSON.stringify(newArrayStorage)) 
+           messageVacancies()
         })
 
         divLocalCompany.append(spanEnterprise,spanLocal)
@@ -168,5 +171,23 @@ function localJson (){
     }
 }
 
+function messageVacancies() {
+    const divMessage = document.querySelector('#div-message')
+
+    if (newArrayStorage.length == 0) {
+        divMessage.classList.remove('hide')
+        console.log('if')
+    } else {
+        divMessage.classList.add('hide')
+        console.log('else')
+    }
+    
+}
+messageVacancies()
+
+
+
+
 localJson()
 renderVacancies(jobsData)
+
