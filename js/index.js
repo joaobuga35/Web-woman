@@ -171,6 +171,7 @@ function localJson (){
     }
 }
 
+localJson()
 function messageVacancies() {
     const divMessage = document.querySelector('#div-message')
 
@@ -181,13 +182,7 @@ function messageVacancies() {
         divMessage.classList.add('hide')
         console.log('else')
     }
-    
 }
 messageVacancies()
-
-
-
-
-localJson()
 renderVacancies(jobsData)
 
